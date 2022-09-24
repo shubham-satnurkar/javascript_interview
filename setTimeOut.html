@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeOut</title>
+</head>
+<body>
+        <h1>SetTimeOut Functions</h1>
+        <button id="btn">Click Me</button>
+
+        <script>
+            function abc(){
+                let name = 'Shubham';
+                setTimeout(() => {
+                    console.log(name);
+                }, 500);
+                console.log('Hello JavaScript')
+            }
+            abc();
+
+
+
+            function number(){
+                for(let i=1; i<=5; i++){
+                    setTimeout(() => {
+                        console.log(i)
+                    }, i*1000);
+                }
+            }
+            number()
+
+            function x(){
+                for(var i =6; i<= 10;i++){
+                    function close(x){
+                        setTimeout(() => {
+                            console.log(x)
+                        }, x * 1000);
+                    }
+                    close(i)
+                }
+            }
+            x()
+
+
+
+            function counter(){
+                let count = 0;
+                return function incCounter(){
+                    count++;
+                    console.log(count)
+                }
+            }
+            let counts = counter();
+            counts()
+
+             let btn = document.getElementById('btn');
+             btn.addEventListener('click', counts);
+
+
+
+             console.log('Start')
+
+             setTimeout(function cb(){
+                console.log("Callback")
+             });
+
+             console.log("End");
+
+            //  let startDate = new Date().getTime();
+            //  let endDate =  startDate;
+            //  while(endDate < startDate + 10000){
+            //     endDate = new Date().getTime();
+            //  }
+             console.log("While Expires")
+
+
+        </script>
+</body>
+</html>

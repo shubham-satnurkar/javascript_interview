@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+<body>
+    <h1>Javascriot Closures</h1>
+
+    <script>
+        function x( ){
+            let a = 10;
+            function y(){
+                console.log(a)
+            }
+            a = 200;
+            return y
+        }
+        let z = x();
+        console.log(z);
+        z();
+
+
+
+        function abc(){
+            let x = 20;
+            function xyz(){
+                let y = 50;
+                function abd(){
+                    console.log(x,y);
+                }
+                abd()
+            }
+            xyz()
+        }
+        abc();
+    </script>
+</body>
+</html>

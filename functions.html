@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+    <h1>All Functions In JavaScript</h1>
+
+    <script>
+        // function Statement aka function declaration
+        function a(){
+            console.log('a called')
+        }
+        a()
+
+        // Functions Expression
+        var b =  function(){
+            console.log('b called')
+        }
+        b()
+
+        // Anonymous Function  a function withot name and personal identity...
+        let check = function(param){
+            console.log(param);
+        }
+        check(function () {})
+
+        // Difference between parameter and arguments
+        // Parameters : It is put inside the function as a identifier we cannot access param outside the function
+        // Arguments : It the value which we pass inside the function are known as arguments and the lable or identifier get those values called parameters.
+
+
+        // First Class Function
+        // The ability to use functions as value is known as first class function. Function inside function, pass as value 
+        let  firstClass = function (param){
+            console.log(param)
+            return abcd()
+        }
+        firstClass(
+            function () {console.log('hello')}
+        )
+
+        function abcd(){
+            console.log('Welcome to javascript')
+        }
+    </script>
+</body>
+</html>

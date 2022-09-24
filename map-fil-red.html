@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Filter Reduce</title>
+</head>
+<body>
+    <h1>Map Filter Reduce Higher Order Functions</h1>
+    <div id="map">
+    </div>
+    <script>
+        // Map function
+        const arr = [5, 3, 6, 7,8,9];
+        console.log(arr)
+        // Double, Triple the array
+        function double(x) {return 2*x }
+        function triple(x) {return 3*x }
+        function binary(x) {return x.toString(2) }
+
+        const output1 =arr.map(double);
+        console.log(output1);
+        const output2 =arr.map(triple);
+        console.log(output2);
+        const output3 =arr.map(binary);
+        console.log(output3);
+        document.getElementById('map').innerHTML = `<h4>Map Function</h4> Array :- ${arr} <br> Double :-${output1} <br> Triple :-${output2} <br> Binary :-${output3} <br> <br>`
+
+        // Filter Function
+        const array = [1,2,3,4,5,6,7,8,9];
+        console.log(array);
+        function isOdd(x){return x % 2 ===1}
+        function isEven(x){return x % 2 ===0}
+        function isGreater(x){return x > 4 }
+
+        const result1 = array.filter(isOdd);
+        console.log(result1);
+        const result2 = array.filter(isEven);
+        console.log(result2)
+        const result3 = array.filter(isGreater);
+        console.log(result3);
+
+        // Reduce Functions
+        // Normal Way
+        function makeSum(array){
+            let sum = 0, max=0;
+            for(let i=0; i<array.length; i++){
+                sum+= array[i];
+                if(array[i]>max){
+                    max = array[i]
+                }
+            }
+            return (sum, max)
+        }
+        console.log(makeSum(array));
+
+        // Reduce
+        const output = array.reduce(function(acc, array){
+            acc+=array;
+            return acc
+        }, 0)
+        console.log(output)
+
+        const maxValue = array.reduce(function(max, curr){
+            if(curr>max){
+                max= curr
+            }
+            return max
+        }, 0)
+        console.log(maxValue)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance Array For Loops</title>
+</head>
+<body>
+    <div id="target"></div>
+    <script>
+        let employees= [
+            {id:1 ,name : 'Shubham', age : 26, department : 'Front End', company : 'Neosoft'},
+            {id:2 ,name : 'Prashant', age : 23, department : 'Front End', company : 'Neosoft'},
+            {id:3 ,name : 'Akash', age : 22, department : 'Back End', company : 'Samsung'},
+            {id:4 ,name : 'Nirav', age : 30, department : 'Full Stack', company : 'Samsung'},
+            {id:5 ,name : 'Om', age : 29, department : 'Front End', company : 'Uplers'},
+            {id:6 ,name : 'Nikhil', age : 36, department : 'IT', company : 'Uplers'},
+        ]
+
+        // Simple For Loop for traversing an array increment
+        for(let i = 0; i<employees.length; i++){
+            let emp = employees[i];
+            document.write(` ${emp.id} : ${emp.name} , ${emp.age} <br><br>`)
+        }
+        // Simpe for loop for decrement
+        for(let i = employees.length-1; i>=0; i--){
+            let emp = employees[i];
+            document.write(`${emp.name} <br>`);
+            console.log(emp)
+        }
+
+        // for Of Loop
+        for(employee of employees){
+            console.log(`Id : ${employee.id} Name : ${employee.name} Age : ${employee.age} Department : ${employee.department} Company : ${employee.company}`)
+            document.write(`Id : ${employee.id} Name : ${employee.name} 
+                            Age : ${employee.age}
+                            Department : ${employee.department} 
+                            Company : ${employee.company} <br/> <br/>` )
+        }
+
+        //for in loop
+        let name = 'Shubham';
+        for(i in name){
+            console.log(i)
+        }
+        
+    </script>
+</body>
+</html>

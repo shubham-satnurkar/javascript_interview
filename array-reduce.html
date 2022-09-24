@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce Function</title>
+</head>
+<body>
+    <script>
+        let employees= [
+            {id:1 ,name : 'Shubham', age : 26, department : 'Front End', company : 'Neosoft', salary : 12345},
+            {id:2 ,name : 'Prashant', age : 23, department : 'Front End', company : 'Neosoft', salary : 32345},
+            {id:3 ,name : 'Akash', age : 22, department : 'Back End', company : 'Samsung', salary : 52345},
+            {id:4 ,name : 'Nirav', age : 30, department : 'Full Stack', company : 'Samsung', salary : 72345},
+            {id:5 ,name : 'Om', age : 29, department : 'Front End', company : 'Uplers', salary : 92345},
+            {id:6 ,name : 'Nikhil', age : 36, department : 'IT', company : 'Uplers', salary : 112345},
+        ]
+
+        // Regular Function
+       let sum=0;
+       for(employee of employees){
+        sum+=employee.salary
+       }
+       console.log(sum);
+       document.write(`Sum of Salary is ${sum}`)
+        
+    // Reduce Function
+    let sum1 = employees.reduce((acc, employee)=>acc+employee.salary, 0);
+    console.log(sum1);
+
+
+
+    let numArr = [45, 43, 34, 56, 78, 59, 90, 10, 30];
+    let s1 = numArr.reduce((acc, ele)=> acc+ele);
+    //acc = 45, ele= 43;
+    console.log(s1)
+
+    let s2= numArr.reduce((acc, ele)=> acc+ele, 100)
+    //acc =100, ele=45
+    console.log(s2)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Function</title>
+</head>
+<body>
+    <script>
+        let employees= [
+            {id:1 ,name : 'Shubham', age : 26, department : 'Front End', company : 'Neosoft', salary : 12345},
+            {id:2 ,name : 'Prashant', age : 23, department : 'Front End', company : 'Neosoft', salary : 32345},
+            {id:3 ,name : 'Akash', age : 22, department : 'Back End', company : 'Samsung', salary : 52345},
+            {id:4 ,name : 'Nirav', age : 30, department : 'Full Stack', company : 'Samsung', salary : 72345},
+            {id:5 ,name : 'Om', age : 29, department : 'Front End', company : 'Uplers', salary : 92345},
+            {id:6 ,name : 'Nikhil', age : 36, department : 'IT', company : 'Uplers', salary : 112345},
+            {id:7 ,name : 'Parag', age : 30, department : 'IT', company : 'Persistant', salary : 204345},
+        ]
+
+        // Regular way
+        let filterArr = [];
+        for(let emp of employees){
+            if(emp.name.startsWith("P")){
+                filterArr.push(emp)
+            }
+        }
+        console.log(filterArr)
+       
+
+        // filter method
+        let arr = employees.filter(emp=>emp.name.startsWith("S"));
+        arr = employees.filter(emp=>emp.salary> 70000)
+        console.log(arr)
+
+    </script>
+</body>
+</html>

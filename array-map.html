@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Function</title>
+</head>
+<body>
+    <script>
+        let employees= [
+            {id:1 ,name : 'Shubham', age : 26, department : 'Front End', company : 'Neosoft', salary : 12345},
+            {id:2 ,name : 'Prashant', age : 23, department : 'Front End', company : 'Neosoft', salary : 32345},
+            {id:3 ,name : 'Akash', age : 22, department : 'Back End', company : 'Samsung', salary : 52345},
+            {id:4 ,name : 'Nirav', age : 30, department : 'Full Stack', company : 'Samsung', salary : 72345},
+            {id:5 ,name : 'Om', age : 29, department : 'Front End', company : 'Uplers', salary : 92345},
+            {id:6 ,name : 'Nikhil', age : 36, department : 'IT', company : 'Uplers', salary : 112345},
+        ]
+
+        
+        let emps = [];
+        for(let employee of employees){
+            employee.salary = employee.salary+5000;
+            emps.push(employee);
+        }
+        console.log(emps)
+
+        let emp = employees.map(emp=>emp.salary);
+        console.log(emp)
+        let newEmp = employees.map(emp=>emp.salary+5000);
+        console.log(newEmp);
+
+        employees.map(emp=>emp.salary+10000).forEach(emp=>console.log(emp));
+        
+
+    </script>
+</body>
+</html>

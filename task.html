@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map, Filter, Reduce Task</title>
+</head>
+<body>
+    <h1>Map, Filter, Reduce Task</h1>
+    <script>
+        const users = [
+            {firstName : "Shubham", lastName : "Satnurar", age : 26},
+            {firstName : "Shubham", lastName : "Athawle", age : 23},
+            {firstName : "Shubham", lastName : "Mane", age : 24},
+            {firstName : "Rushikesh", lastName : "Gadkar", age : 24},
+            {firstName : "Abhijit", lastName : "Shende", age : 29},
+        ];
+        // First and last name
+        const name = users.map(x=> `${x.firstName} ${x.lastName}`);
+        console.log(name)
+        // Ageg
+        const age = users.reduce(function(acc, curr){
+            if(acc[curr.age]){
+                acc[curr.age] = ++acc[curr.age];
+            }
+            else{
+                acc[curr.age] = 1
+            }
+            return acc
+        }, {})
+        console.log(age)
+        // Age and First Name <29
+        const ageName = users.filter((x)=> x.age<29).map((x)=> x.firstName)
+        console.log(ageName)
+
+        // using reduce find age < 26 with first name
+       const output = users.reduce(function(acc, curr){
+            if(curr.age< 25){
+                acc.push(`${curr.firstName} ${curr.lastName}`)
+            }
+            return acc
+       }, []);
+       console.log(output)
+    </script>
+</body>
+</html>
